@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link rel="stylesheet" href="static/css/style.css">
+  <title>Agriboon!</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main"><img src="static/img/logo.jpg" alt="logo" height="50px" width="150px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="crops">Know your soil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fertilize">Fertilizer</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="cropd">Crop disease detection</a>
+          </li> -->
+        </ul>
+        <form class="d-flex" style="margin-left:80px">
+          <div class="dropdown">
+                      <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fas fa-street-view" style="font-size:35px;color:black"></i>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right:0; left:auto">
+                          <li><a class="dropdown-item" href="#" id="user_name">ID : {{ data }}</a></li>
+                          <li><a class="dropdown-item" href="#" data-bs-target="#exampleModal1" data-bs-toggle="modal">Details</a></li>
+                          <li><a class="dropdown-item" href="logout">Logout</a></li>
+                      </ul>
+                  </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div id="exampleModal1" class="modal" role='dialog'>
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-body">User Details</h4>
+            </div>
+            <div class="modal-body text-body" id="boo">
+              {% for info in info %}
+                <p>Name  : {{info[0]}} {{info[1]}}</p>
+                <p>Phone  : {{info[2]}}</p>
+                <p>Address  : {{info[3]}}</p>
+                <p>Device ID  : {{ data }}</p>
+                <p>Crops : {{info[5]}}</p>
+                <hr style="height: 10px">
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="static/img/kk.jpg" class="d-block w-100" alt="..." width="700" height="377">
+        </div>
+        <div class="carousel-item">
+          <img src="static/img/plants.jpg" class="d-block w-100" alt="..." width="700" height="377">
+        </div>
+        <div class="carousel-item">
+          <img src="static/img/farmer.jpg" class="d-block w-100" alt="..." width="700" height="377">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <section class="colored-section" id="title">
+
+    <div id="cards_landscape_wrap-2">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <a href="crops">
+              <div class="card-flyer" style="height:20rem">
+                <div class="text-box">
+                  <div class="image-box">
+                    <img src="static/img/soil.jpg" alt="" />
+                  </div>
+                  <div class="text-container" id="text">
+                    <h5>Know About Your Soil</h5>
+                    <p class="card-text">Get to know the quality and type of crops best suited for your soil</p>
+                    <p></p>
+
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <a href="fertilize">
+              <div class="card-flyer" style="height:20rem">
+                <div class="text-box">
+                  <div class="image-box">
+                    <img src="static/img/fertilizer.jpg" alt="" />
+                  </div>
+                  <div class="text-container" id="text">
+                    <h5>Know the right fertilizers</h5>
+                    <p class="card-text">Get to know the best suited fertilizer for your soil.</p>
+                    <p></p>
+
+                  </div>
+
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <a href="cropd">
+              <div class="card-flyer" style="height:20rem">
+                <div class="text-box">
+                  <div class="image-box">
+                    <img src="static/img/disease.jpg" alt="" />
+                  </div>
+
+                  <div class="text-container" id="text">
+                    <h5>Detect a crop disease</h5>
+                    <p class="card-text">Get to know the crop disease and its cause.</p>
+                    <p></p>
+
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="text-center text-white" id='contact'>
+    <div class="text-center text-dark p-3">
+      © 2022 Copyright:
+      <a class="text-dark" href="#">Farming simplified</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

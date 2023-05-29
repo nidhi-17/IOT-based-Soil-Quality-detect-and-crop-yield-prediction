@@ -1,0 +1,55 @@
+.navbar{
+ background-color:rgb(116, 159, 130)
+
+
+}
+.nav-link {
+          color: white;
+
+            font-size:1.2rem;
+      }
+
+      .nav-item>a:hover {
+          color:black;;
+
+      }
+
+      /*code to change background color*/
+      .navbar-nav>.active>a {
+
+          color:black;
+
+
+      }
+      .navbar-brand{
+        color: white;
+
+        font-size: 2.0 rem;
+        font-weight: bold;
+      }
+      .nav-item{
+          padding:0 18px;
+      }
+     footer{
+        background-color:rgb(116, 159, 130);
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      body{
+          background-color:rgb(230, 230, 187);;
+      }
+
+  .btn{
+    background-color:white;
+    color:black;
+  }
+
+       .navbar-brand:hover {
+           color:black;
+
+       }
+
+#text{
+    color:rgb(87, 192, 122);
+}

@@ -1,0 +1,6 @@
+__pycache__/
+flask_session/
+venv/
+AmazonRootCA1.pem
+Devicecertificate.pem.crt
+private.pem.key
